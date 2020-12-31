@@ -533,7 +533,11 @@
 
         //核心函数
         function run() {
-			$("#table_container").html(bibles[Math.floor((Math.random()*bibles.length))])
+			$("#random").text("抽取中...")
+			setTimeout(function () {
+                $("#table_container").html(bibles[Math.floor((Math.random()*bibles.length))])
+				$("#random").text("你的新年玛娜")
+            }, 3000);
 		}
         //显示旋转的logo
         function showRotatingImage() {
@@ -551,7 +555,7 @@
            data-buttonText="打开MPC.txt(可选)" id="mpc_txt" accept=".txt" onchange="handleMpcTxt(this.files)">-->
 
     <div class="row" style="margin-top: 15vh;margin-bottom: 5vh;text-align: center">
-        <button class="button button-3d button-primary button-pill button-large" style="text-align:center;font-size: x-large;"
+        <button class="button button-3d button-primary button-pill button-large" id="random" style="text-align:center;font-size: x-large;"
                 onclick="run()">随机抽取!
         </button>
     </div>
